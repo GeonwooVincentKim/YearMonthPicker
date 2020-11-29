@@ -27,6 +27,10 @@ class _YearMonthPickerState extends State<YearMonthPicker> {
     
   }
 
+  monthPicker(){
+
+  }
+
   Widget _buildYearPicker(){
     return GestureDetector(
       onTap: yearPicker,
@@ -38,7 +42,13 @@ class _YearMonthPickerState extends State<YearMonthPicker> {
   }
 
   Widget _buildMonthPicker(){
-    return Container();
+    return GestureDetector(
+      onTap: monthPicker,
+      child: TextFormField(
+        controller: mController,
+        
+      )
+    );
   }
 
   Widget _buildYMPBody(){
@@ -47,7 +57,7 @@ class _YearMonthPickerState extends State<YearMonthPicker> {
       // color: Colors.black12,
       child: Form(
         key: _formKey,
-        child: Column(
+        child: Row(
           children: <Widget>[
             _buildYearPicker(),
             SizedBox(height: 20),
@@ -55,7 +65,6 @@ class _YearMonthPickerState extends State<YearMonthPicker> {
           ]
         )
       )
-      
     );
   }
   
